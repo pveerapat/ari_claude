@@ -1,0 +1,48 @@
+# Secrets — never commit
+.env
+*.pem
+*.key
+*.cert
+*.crt
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Alembic generated versions (committed intentionally when created)
+# backend/alembic/versions/  <- keep versions committed
+
+# Node / Web (future)
+node_modules/
+.next/
+.nuxt/
+
+# Flutter / Mobile (future)
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+
+# Docker
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Media / uploads (local only)
+media/
+uploads/
