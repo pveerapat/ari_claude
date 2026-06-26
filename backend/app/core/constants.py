@@ -1,0 +1,10 @@
+SERVICE_NAME = "ari-backend"
+API_V1_PREFIX = "/api/v1"
+REQUEST_ID_HEADER = "X-Request-ID"
+
+VALIDATION_ERROR = "validation_error"
+UNAUTHORIZED = "unauthorized"
+FORBIDDEN = "forbidden"
+NOT_FOUND = "not_found"
+CONFLICT = "conflict"
+INTERNAL_ERROR = "internal_error"
