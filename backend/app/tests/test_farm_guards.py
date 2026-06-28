@@ -233,9 +233,10 @@ class TestForbiddenScope:
         resp = client.get("/api/v1/qr")
         assert resp.status_code == 404
 
-    def test_no_notebook_entries_route(self, client):
+    def test_notebook_entries_route_requires_auth(self, client):
+        """P2-7 implements /notebook-entries; unauthenticated access returns 401/403."""
         resp = client.get("/api/v1/notebook-entries")
-        assert resp.status_code == 404
+        assert resp.status_code in (401, 403)
 
     def test_no_archive_endpoint_on_farm(self, client):
         """PATCH /farms/{id}/archive is not implemented (API-GAP-P2-6-001)."""
