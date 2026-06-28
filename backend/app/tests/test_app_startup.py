@@ -73,10 +73,10 @@ def test_calc_offset():
     assert calc_offset(page=2, page_size=20) == 20
 
 
-def test_no_feature_routes():
+def test_no_unimplemented_feature_routes():
     route_paths = [route.path for route in app.routes if isinstance(route, APIRoute)]
+    # Auth routes are implemented in P2-5; remaining features are deferred to P2-6+
     forbidden = [
-        "/api/v1/auth",
         "/api/v1/users",
         "/api/v1/organizations",
         "/api/v1/farms",
@@ -92,6 +92,17 @@ def test_no_feature_routes():
     ]
     for path in forbidden:
         assert path not in route_paths
+
+
+def test_auth_routes_registered():
+    # FastAPI includes routers lazily; verify endpoints exist by checking they return
+    # a non-404 status (400/401/422 are expected when no valid payload/token is sent).
+    client = TestClient(app)
+    assert client.post("/api/v1/auth/register", json={}).status_code != 404
+    assert client.post("/api/v1/auth/login", json={}).status_code != 404
+    assert client.post("/api/v1/auth/refresh", json={}).status_code != 404
+    assert client.get("/api/v1/auth/me").status_code != 404
+    assert client.post("/api/v1/auth/logout").status_code != 404
 
 
 def test_health_with_test_client():
