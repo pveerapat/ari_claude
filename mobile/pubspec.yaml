@@ -1,0 +1,71 @@
+name: ari_mobile
+description: ARI Agricultural Intelligence Platform — Flutter Mobile App
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: '>=3.19.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # HTTP client
+  http: ^1.2.1
+
+  # Secure token storage (Keychain / Keystore)
+  flutter_secure_storage: ^9.2.2
+
+  # Local structured database for offline queue and ID mapping
+  sqflite: ^2.3.3+1
+  path: ^1.9.0
+
+  # State management (ChangeNotifier-based providers)
+  provider: ^6.1.2
+
+  # Network connectivity detection
+  connectivity_plus: ^6.0.5
+
+  # File system paths
+  path_provider: ^2.1.4
+
+  # UUID generation for client_id / device_id / client_batch_id
+  uuid: ^4.4.2
+
+  # Permissions (camera, microphone, storage, location, notifications)
+  permission_handler: ^11.3.1
+
+  # Image/video picker and camera
+  image_picker: ^1.1.2
+
+  # Audio recording for voice capture
+  record: ^6.2.1
+
+  # Shared preferences for non-secret settings (e.g. active farm context)
+  shared_preferences: ^2.3.2
+
+  # Date/time formatting
+  intl: ^0.19.0
+
+  # HTTP multipart / file upload utilities (included with http package)
+  mime: ^1.0.5
+
+  # Video playback
+  video_player: ^2.9.1
+
+  # Audio playback for voice recordings
+  audioplayers: ^6.1.0
+
+  # Open URLs / links in browser or external apps
+  url_launcher: ^6.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  mockito: ^5.4.4
+  build_runner: ^2.4.11
+
+flutter:
+  uses-material-design: true

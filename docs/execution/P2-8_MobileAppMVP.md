@@ -2463,13 +2463,7 @@ Freeze Command:
 Only mark this document as FROZEN if Owner explicitly says:
 
 ok, freeze
-```
 
-After freeze, P2-8 may be used to create a Claude Code implementation prompt for Mobile App MVP implementation.
-
-Until freeze, this document is not an implementation authorization.
-
----
 *************************************** 2026-06-29
 ARI V1 — P2-8 Mobile App MVP Implementation v1.0
 Status: FROZEN
